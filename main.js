@@ -39,7 +39,8 @@ loginBtn.addEventListener('click',  googleLogin);
 
 //Se ejecuta al cerrar pestaña
 signOutBtn.addEventListener("click", signOut);
-window.addEventListener('close', signOut);
+window.addEventListener('unload', signOut);
+window.onbeforeunload = signOut;
 
 //Función para hacer login con Google
 async function googleLogin(){
@@ -73,6 +74,9 @@ function initApp(){
     //Eventos: al aparecer o desaparecer en la BD
     onChildAdded(usuariosConectados, addUser);
     onChildRemoved(usuariosConectados, removeUser);
+    //Eventos para la creación de una sala
+    onChildAdded(rooms, newRoom);
+
 }
 
 function login(uid, name){
@@ -105,12 +109,23 @@ function addUser(data){
             creator: user.uid,
             friend: friend_id
         })
-    });                        
+         //Creación de chat
+        new Chat(room.key, user, "chats", database);
+    }); 
+    
 }
 
 function removeUser(data){
     $('#'+data.val().uid).slideUp('fast', function(){
         $(this).remove();
     });
+}
+
+//Crear una nueva sala si alguien más la abre. Sincroniza
+function newRoom(data){
+    //Si yo soy el amigo, alguien creó la sala conmigo
+    if(data.val().friend == user.uid){
+        new Chat(data.key, user, "chats", database);
+    }
 }
 

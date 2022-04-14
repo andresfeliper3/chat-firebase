@@ -35,10 +35,26 @@
                 </ul>
             </div>
         </div>
-
+        <div class="col-xs">
+            <div class="box" id="chats">
+                
+            </div>
+        </div>
     </div>
    <!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+<script type="text/x-custom-template" id="hidden-template">
+    <div class="chat" id="${id}">
+        <ul class="messages collection" style="height:400px;">
+
+        </ul>
+        <form class="form">
+            <input type="text" placeholder="Mensaje" class="mensaje-content">
+            <input type="submit" class="btn btn-raised indigo white-text" value="Enviar">
+        </form>
+    </div>
+</script>
+
+   <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
@@ -46,8 +62,9 @@
 
 <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
 
 <script type="module" src="./main.js"></script>
-    
+<script src="./chat.js"></script>
 </body>
 </html>
