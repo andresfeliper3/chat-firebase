@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat con Firebase</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/flexboxgrid/6.3.0/flexboxgrid.min.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+    <div id="login" class="white row middle-xs center-xs">
+        <div class="col-xs-12">
+            <div class="box">
+                <p>Antes de entrar al chat, tienes que iniciar sesión</p>
+                <button id="start-login" class="btn btn-raised red white-text">
+                    Iniciar sesión con Google
+                </button>
+            </div>
+        </div>
+       
+    </div>
+    <button id="start-signOut" class="btn btn-raised red white-text">
+        Cerrar sesión
+    </button>
+    <div id="app" class="row">
+        <div class="col-md-3 col-xs-12">
+            <div class="box">
+                <div class="indigo white-text connected-style">
+                    Usuarios conectados
+                </div>
+                <ul class="collection" id="users">
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-analytics.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-auth.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script type="module" src="./main.js"></script>
+    
+</body>
+</html>
