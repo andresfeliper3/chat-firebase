@@ -1,0 +1,27 @@
+
+#login {
+    height:100vh;
+    z-index:10;
+    position:fixed;
+    width:100%;
+}
+#start-signOut {
+    display:none;
+}
+#app {
+    height:100vh;
+    width: 100%;
+}
+.connected-style {
+    padding:10px 15px;
+}
+
+.chat {
+    width:300px;
+    display:inline-block;
+    margin-right:1em;
+}
+.messages {
+    height:300px;
+    overflow-y:scroll;
+}
